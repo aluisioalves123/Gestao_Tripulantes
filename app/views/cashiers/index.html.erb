@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cashiers</h1>
+<h1>Fluxo de caixa</h1>
 
 <table>
   <thead>
@@ -18,7 +18,12 @@
       <tr>
         <td><%= cashier.nome %></td>
         <td><%= cashier.categoria %></td>
-        <td><%= cashier.valor %></td>
+        <% if cashier.valor > 0 %>
+          <td style="color: green;">
+        <% else %>
+          <td style="color: red;">
+        <% end %>
+          <%= cashier.valor %></td>
         <td><%= cashier.data %></td>
         <td><%= link_to 'Show', cashier %></td>
         <td><%= link_to 'Edit', edit_cashier_path(cashier) %></td>
@@ -29,5 +34,8 @@
 </table>
 
 <br>
-
-<%= link_to 'New Cashier', new_cashier_path %>
+<p>Total: <%= @balance %></p>
+<%= link_to 'Nova conta', new_cashier_path %>
+<p>
+  <%= link_to "Home", root_path %></p>
+</p>

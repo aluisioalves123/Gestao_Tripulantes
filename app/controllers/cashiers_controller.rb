@@ -5,8 +5,14 @@ class CashiersController < ApplicationController
   # GET /cashiers.json
   def index
     @cashiers = Cashier.all
+    
+    @caixa = Cashier.all
+    @balance = 0
+    @caixa.each do |value|
+      @balance += value.valor
+    end
   end
-
+  
   # GET /cashiers/1
   # GET /cashiers/1.json
   def show
@@ -71,4 +77,4 @@ class CashiersController < ApplicationController
     def cashier_params
       params.require(:cashier).permit(:nome, :categoria, :valor, :data)
     end
-end
+  end
