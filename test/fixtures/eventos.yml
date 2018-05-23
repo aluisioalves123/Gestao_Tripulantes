@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evento: MyText
+  data: 2018-05-22
+  horario: 2018-05-22 23:18:22
+
+two:
+  evento: MyText
+  data: 2018-05-22
+  horario: 2018-05-22 23:18:22
