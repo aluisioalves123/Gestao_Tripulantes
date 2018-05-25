@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<h1>DADOS DO PROJETO</h1>
+<p>
+  <strong>Nome:</strong>
+  <%= @project.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @project.descricao %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @project.data_inicio %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @project.valor %>
+</p>
+<h1>SPRINTS DO PROJETO</h1>
+<% @sprints.each do |sprint| %>
+  <%= sprint.check %>
+  <%= sprint.tarefa %>
+  <%= link_to 'Edit', edit_sprint_path(sprint) %>
+  <%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br><br>
+<% end %>
+
+<%= link_to 'Novo sprint', new_sprint_path(project_id: @project.id) %><br><br>
+
+<h1>PARTICIPANTES DO PROJETO</h1>
+
+<%= link_to 'Novo participante', list_users_path %><br><br>
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

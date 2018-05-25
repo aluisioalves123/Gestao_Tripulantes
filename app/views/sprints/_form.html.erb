@@ -1,0 +1,31 @@
+<%= form_for(sprint) do |f| %>
+  <% if sprint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sprint.errors.count, "error") %> prohibited this sprint from being saved:</h2>
+
+      <ul>
+      <% sprint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :check %>
+    <%= f.check_box :check %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tarefa %>
+    <%= f.text_field :tarefa %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :project_id, value:"#{@project}" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

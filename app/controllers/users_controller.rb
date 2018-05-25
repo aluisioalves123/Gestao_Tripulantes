@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+  
+#   def
+#     params.require(:user).permit(:name, :image)
+#   end
 
   # GET /users/1
   # GET /users/1.json

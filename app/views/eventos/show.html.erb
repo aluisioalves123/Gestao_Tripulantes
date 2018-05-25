@@ -1,18 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+    <!-- <strong>Evento:</strong> -->
+    <%= @evento.evento %>
+    Postado: <%= @evento.data %>
+    às <%= @evento.horario %>
+</div>
 <p>
-  <strong>Evento:</strong>
-  <%= @evento.evento %>
+  
 </p>
 
 <p>
-  <strong>Data:</strong>
-  <%= @evento.data %>
+  
 </p>
 
 <p>
-  <strong>Horario:</strong>
-  <%= @evento.horario %>
+  
 </p>
 
 <%= link_to 'Edit', edit_evento_path(@evento) %> |

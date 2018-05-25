@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :sprints
+  resources :projects
   resources :eventos
   resources :cashiers
   get 'home/index'
+  get "list_users", :to => "list_user#index"
 
   devise_for :users
   resources :users
