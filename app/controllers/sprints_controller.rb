@@ -57,7 +57,7 @@ class SprintsController < ApplicationController
   def destroy
     @sprint.destroy
     respond_to do |format|
-      format.html { redirect_to sprints_url, notice: 'Sprint was successfully destroyed.' }
+      format.html { redirect_to project_path(@sprint.project_id), notice: 'Sprint was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

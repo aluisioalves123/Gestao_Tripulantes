@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :project_users
   resources :sprints
   resources :projects
   resources :eventos

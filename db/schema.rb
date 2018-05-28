@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524174319) do
+ActiveRecord::Schema.define(version: 20180528182734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20180524174319) do
     t.time     "horario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "project_users", force: :cascade do |t|
+    t.integer  "projects_id"
+    t.integer  "users_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["projects_id"], name: "index_project_users_on_projects_id", using: :btree
+    t.index ["users_id"], name: "index_project_users_on_users_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -97,5 +106,7 @@ ActiveRecord::Schema.define(version: 20180524174319) do
     t.index ["user_id"], name: "index_users_roles_on_user_id", using: :btree
   end
 
+  add_foreign_key "project_users", "projects", column: "projects_id"
+  add_foreign_key "project_users", "users", column: "users_id"
   add_foreign_key "sprints", "projects"
 end

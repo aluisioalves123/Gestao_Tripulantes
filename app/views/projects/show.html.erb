@@ -32,6 +32,6 @@
 
 <h1>PARTICIPANTES DO PROJETO</h1>
 
-<%= link_to 'Novo participante', list_users_path %><br><br>
+<%= link_to 'Novo participante', new_project_user_path(project_id: @project.id) %><br><br>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
