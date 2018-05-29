@@ -26,9 +26,10 @@ class ProjectUsersController < ApplicationController
   # POST /project_users.json
   def create
     @project_user = ProjectUser.new(project_user_params)
+
     respond_to do |format|
       if @project_user.save
-        format.html { redirect_to project_path(@project_user.project_id), notice: 'Project user was successfully created.' }
+        format.html { redirect_to @project_user, notice: 'Project user was successfully created.' }
         format.json { render :show, status: :created, location: @project_user }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ProjectUsersController < ApplicationController
   def update
     respond_to do |format|
       if @project_user.update(project_user_params)
-        format.html { redirect_to project_path(@project_user.project_id), notice: 'Project user was successfully updated.' }
+        format.html { redirect_to @project_user, notice: 'Project user was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_user }
       else
         format.html { render :edit }
@@ -69,6 +70,6 @@ class ProjectUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_user_params
-      params.require(:project_user).permit(:projects_id, :users_id)
+      params.require(:project_user).permit(:project_id, :user_id)
     end
 end

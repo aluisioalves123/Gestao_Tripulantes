@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @sprints = Sprint.where(project: @project).all 
+    @sprints = Sprint.where(project: @project).all
+    @project_users = ProjectUser.where(project: @project).all
   end
 
   # GET /projects/new
