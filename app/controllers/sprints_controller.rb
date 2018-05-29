@@ -20,6 +20,7 @@ class SprintsController < ApplicationController
 
   # GET /sprints/1/edit
   def edit
+    @project = @sprint.project_id
   end
 
   # POST /sprints
@@ -41,6 +42,8 @@ class SprintsController < ApplicationController
   # PATCH/PUT /sprints/1
   # PATCH/PUT /sprints/1.json
   def update
+     @sprint = Sprint.find(params[:id])
+
     respond_to do |format|
       if @sprint.update(sprint_params)
         format.html { redirect_to project_path(@sprint.project_id), notice: 'Sprint was successfully updated.' }

@@ -23,19 +23,24 @@
 <% @sprints.each do |sprint| %>
   <%= sprint.check %>
   <%= sprint.tarefa %>
-  <%= link_to 'Edit', edit_sprint_path(sprint, project_id: @project.id) %>
-  <%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%if current_user.admin?%>
+    <%= link_to 'Edit', edit_sprint_path(sprint) %>
+    <%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 <br><br>
 <% end %>
-
-<%= link_to 'Novo sprint', new_sprint_path(project_id: @project.id) %><br><br>
-
+<%if current_user.admin?%>
+  <%= link_to 'Novo sprint', new_sprint_path(project_id: @project.id) %><br><br>
+<%end%>
 <h1>PARTICIPANTES DO PROJETO</h1>
 <% @project_users.each do |project_user| %>
   <%= project_user.user.name %>
+  <%if current_user.admin?%>
+    <%= link_to 'Remover', project_user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%end%>
 <br><br>
 <% end %>
-
-<%= link_to 'Novo participante', new_project_user_path(project_id: @project.id) %><br><br>
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<%if current_user.admin?%>
+  <%= link_to 'Novo participante', new_project_user_path(project_id: @project.id) %><br><br>
+<%end%>
 <%= link_to 'Back', projects_path %>

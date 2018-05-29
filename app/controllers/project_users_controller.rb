@@ -29,7 +29,7 @@ class ProjectUsersController < ApplicationController
 
     respond_to do |format|
       if @project_user.save
-        format.html { redirect_to @project_user, notice: 'Project user was successfully created.' }
+        format.html { redirect_to project_path(@project_user.project_id), notice: 'Project user was successfully created.' }
         format.json { render :show, status: :created, location: @project_user }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ProjectUsersController < ApplicationController
   def update
     respond_to do |format|
       if @project_user.update(project_user_params)
-        format.html { redirect_to @project_user, notice: 'Project user was successfully updated.' }
+        format.html { redirect_to project_path(@project_user.project_id), notice: 'Project user was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_user }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ProjectUsersController < ApplicationController
   def destroy
     @project_user.destroy
     respond_to do |format|
-      format.html { redirect_to project_users_url, notice: 'Project user was successfully destroyed.' }
+      format.html { redirect_to project_path(@project_user.project_id), notice: 'Project user was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

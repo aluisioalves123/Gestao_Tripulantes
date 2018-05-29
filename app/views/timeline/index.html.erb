@@ -1,0 +1,14 @@
+<h1>
+  Linha do tempo dos projetos
+</h1>
+
+<% @timeline.each do |project| %>
+   <td><%= project.nome %></td>
+   <td><%= project.descricao %></td>
+   <td><%= project.data_inicio %></td>
+   <td><%= project.valor %></td>
+   <td><%= link_to 'Show', project %></td>
+<br>
+<% end %>
+<br>
+<%= link_to 'Voltar', home_index_path	 %> 

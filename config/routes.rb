@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'timeline/index'
+
   get 'pages/index'
 
   resources :project_users
