@@ -2,21 +2,10 @@
 
 <div>
     <!-- <strong>Evento:</strong> -->
-    <%= @evento.evento %>
-    Postado: <%= @evento.data %>
-    às <%= @evento.horario %>
+    <h4><%= @evento.evento %></h4>
+    Postado: <%= @evento.data %> às <%= @evento.horario %>
+    
 </div>
-<p>
-  
-</p>
 
-<p>
-  
-</p>
-
-<p>
-  
-</p>
-
-<%= link_to 'Edit', edit_evento_path(@evento) %> |
-<%= link_to 'Back', eventos_path %>
+<div class="action-item"><a><h5><%= link_to 'Editar', edit_evento_path(@evento) %></h5></a></div>
+<div class="action-item"><a><h5><%= link_to 'Voltar', eventos_path %></h5></a></div>

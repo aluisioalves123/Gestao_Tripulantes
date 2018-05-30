@@ -20,27 +20,54 @@
   <%= @project.valor %>
 </p>
 <h1>SPRINTS DO PROJETO</h1>
+<table>
 <% @sprints.each do |sprint| %>
-  <%= sprint.check %>
-  <%= sprint.tarefa %>
-  <%if current_user.admin?%>
-    <%= link_to 'Edit', edit_sprint_path(sprint) %>
-    <%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-<br><br>
+    <tr>
+      <td>
+        <h4>
+          <% if sprint.check %>
+          <td style="color: green;">
+        <% else %>
+          <td style="color: red;">
+        <% end %>
+           &radic;</td>
+        </h4>
+      </td>
+      <td>
+        <h4><%= sprint.tarefa %></h4>
+      </td>
+      <td>
+        <%if current_user.admin?%>
+          <div class="action-item"><a><h5><%= link_to 'Edit', edit_sprint_path(sprint) %></h5></a></div>
+      </td>
+      <td>
+          <div class="action-item"><a><h5><%= link_to 'Destroy', sprint, method: :delete, data: { confirm: 'Are you sure?' } %></h5></a></div>
+        <% end %>
+      </td>
+    </tr>  
 <% end %>
+</table>
+<br><br>
 <%if current_user.admin?%>
-  <%= link_to 'Novo sprint', new_sprint_path(project_id: @project.id) %><br><br>
+<div class="new-button"><a><h5><%= link_to 'Novo sprint', new_sprint_path(project_id: @project.id) %></h5></a></div><br><br>
 <%end%>
 <h1>PARTICIPANTES DO PROJETO</h1>
+<table>
 <% @project_users.each do |project_user| %>
-  <%= project_user.user.name %>
-  <%if current_user.admin?%>
-    <%= link_to 'Remover', project_user, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%end%>
-<br><br>
+    <tr>
+      <td>
+        <h4><%= project_user.user.name %></h4>
+      </td>
+      <td>
+        <%if current_user.admin?%>
+          <div class="action-item"><a><h5><%= link_to 'Remover', project_user, method: :delete, data: { confirm: 'Are you sure?' } %></h5></a></div>
+        <%end%>
+      </td>     
+    </tr>
 <% end %>
+</table>
+<br><br>
 <%if current_user.admin?%>
-  <%= link_to 'Novo participante', new_project_user_path(project_id: @project.id) %><br><br>
+<div class="action-item"><a><h5><%= link_to 'Novo participante', new_project_user_path(project_id: @project.id) %></h5></a></div><br><br>
 <%end%>
-<%= link_to 'Back', projects_path %>
+<div class="action-item"><a><h5><%= link_to 'Voltar', projects_path %></h5></a></div>

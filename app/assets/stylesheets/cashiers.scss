@@ -6,3 +6,16 @@
 @import "bootstrap";
 @import "AdminLTE/AdminLTE";
 @import "AdminLTE/skins/skin-blue";
+
+.cashier-thead{
+  background-color: #000;
+  color: #FFF;
+}
+
+.cashier-thead tr th{
+  padding: 10px;
+  margin: 15px;
+}
+
+tbody{
+}

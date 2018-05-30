@@ -2,25 +2,32 @@
   Linha do tempo dos projetos
 </h1>
 
-<% @timeline.each do |project| %>
-<div class="faixa">
+<div class="faixa1">
   <h4>
-  <div class="faixa-item">
-    <%= project.data_inicio %>
-  </div>
-  <div class="faixa-item">
-    <%= project.nome %>
-  </div>
-  <div class="faixa-item">
-    <%= project.valor %>
-  </div>
-  <div class="faixa-item">
-    <div class="action-item"><a><%= link_to 'Show', project %></a></div>
-  </div>
+  <div class="faixa-item1"><b>Data de Início</b></div>
+  <div class="faixa-item1"><b>Nome do Projeto</b></div>
+  <div class="faixa-item1"><b>Valor</b></div>
+  <div class="faixa-item1"></div>
   </h4>
 </div>
 
-<br>
+<% @timeline.each do |project| %>
+<div class="faixa2">
+  <h4>
+  <div class="faixa-item2">
+    <%= project.data_inicio %>
+  </div>
+  <div class="faixa-item2">
+    <%= project.nome %>
+  </div>
+  <div class="faixa-item2">
+    <%= project.valor %>
+  </div>
+  <div class="faixa-item2">
+    <div class="action-item"><a><%= link_to 'Mostrar', project %></a></div>
+  </div>
+  </h4>
+</div>
 <% end %>
-<br>
-<%= link_to 'Voltar', home_index_path	 %> 
+<br />
+<div class="action-item"><a><h5><%= link_to 'Voltar', home_index_path	 %> </h5></a></div>

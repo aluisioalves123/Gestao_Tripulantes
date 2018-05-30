@@ -3,36 +3,40 @@
 <h1>Fluxo de caixa</h1>
 
 <table>
-  <thead>
+  <thead class="cashier-thead">
     <tr>
-      <th>Nome</th>
-      <th>Categoria</th>
-      <th>Valor</th>
-      <th>Data</th>
+      
+      <th><h4>Nome</h4></th>
+      <th><h4>Categoria</h4></th>
+      <th><h4>Valor</h4></th>
+      <th><h4>Data</h4></th>
       <th colspan="3"></th>
+      </h3>
     </tr>
   </thead>
 
   <tbody>
     <% @cashiers.each do |cashier| %>
       <tr>
-        <td><%= cashier.nome %></td>
-        <td><%= cashier.categoria %></td>
+        <td><h4><%= cashier.nome %></h4></td>
+        <td><h4><%= cashier.categoria %></h4></td>
         <% if cashier.valor > 0 %>
           <td style="color: green;">
         <% else %>
           <td style="color: red;">
         <% end %>
-          <%= cashier.valor %></td>
-        <td><%= cashier.data %></td>
-        <td><%= link_to 'Show', cashier %></td>
-        <td><%= link_to 'Edit', edit_cashier_path(cashier) %></td>
-        <td><%= link_to 'Destroy', cashier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+           <h4><%= cashier.valor %></h4></td>
+        <td><h4><%= cashier.data %></h4></td>
+        <td><div class="action-item"><h5><%= link_to 'Mostrar', cashier %></h5></div></td>
+        <td><div class="action-item"><h5><%= link_to 'Editar', edit_cashier_path(cashier) %></h5></div></td>
+        <td><div class="action-item"><h5><%= link_to 'Excluir', cashier, method: :delete, data: { confirm: 'Are you sure?' } %></h5></div></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-<p>Total: <%= @balance %></p>
-<%= link_to 'Nova conta', new_cashier_path %>
+<div class="new-button"></a><h5><%= link_to 'Nova conta', new_cashier_path %></h5></a></div>
+<br>
+<p><h3>
+  <b>Total: R$ <%= @balance %></b>
+</h3></p>

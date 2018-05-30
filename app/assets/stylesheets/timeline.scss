@@ -2,13 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.faixa{
+.faixa1{
   width: 100%;
   border: 1px solid #000;  
   height: 50px;
+  background-color: #000;
 }
 
-.faixa .faixa-item{
+.faixa-item1{
+  text-align:center;
   float:left;
-  width: 20%;
+  width: 25%;
+  color: #FFF;
+}
+
+.faixa2{
+  width: 100%;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid ;
+  border-color: #000;  
+  height: 50px;
+}
+
+.faixa-item2{
+  text-align:center;
+  float:left;
+  width: 25%;
+}
+
+.action-item{
+  text-align:center;
+  position:relative;
+  background-color: #000;
+  margin: 2px;
+  border-radius:10px;
+  width: 100px;
+  padding:7px;
+}
+
+.action-item a{
+  color: #FFF;
+}
+
+.action-item a:visited{
+  color: #FFF;
 }
