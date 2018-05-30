@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Photo:</strong>
-</p>
+<%= image_tag(@user.avatar.thumb) if @user.avatar %>
 
 <p>
   <strong>Admin:</strong>
@@ -13,6 +11,14 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+
+<strong>Projetos participados</strong>
+<br>
+<% @project_users.each do |project_user| %>
+  <%= project_user.project.nome %>
+
+<br><br>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -3,11 +3,23 @@
 </h1>
 
 <% @timeline.each do |project| %>
-   <td><%= project.nome %></td>
-   <td><%= project.descricao %></td>
-   <td><%= project.data_inicio %></td>
-   <td><%= project.valor %></td>
-   <td><%= link_to 'Show', project %></td>
+<div class="faixa">
+  <h4>
+  <div class="faixa-item">
+    <%= project.data_inicio %>
+  </div>
+  <div class="faixa-item">
+    <%= project.nome %>
+  </div>
+  <div class="faixa-item">
+    <%= project.valor %>
+  </div>
+  <div class="faixa-item">
+    <div class="action-item"><a><%= link_to 'Show', project %></a></div>
+  </div>
+  </h4>
+</div>
+
 <br>
 <% end %>
 <br>

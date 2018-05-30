@@ -59,6 +59,8 @@ body {
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   margin-left: 230px;
   z-index: 820;
+  position: fixed;
+  margin-bottom: 0;
 }
 .layout-top-nav .content-wrapper,
 .layout-top-nav .main-footer {
@@ -144,6 +146,7 @@ body {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 100hv;
 }
 /* H1 - H6 font */
 h1,

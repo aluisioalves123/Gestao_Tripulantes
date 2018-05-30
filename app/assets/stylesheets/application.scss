@@ -1,0 +1,56 @@
+.top-line{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #000;
+}
+
+.top-line .new-button{
+  float:left;
+  display: block;
+  background-color: #000;
+  color: #FFF;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.new-button a{
+  color: #FFF;
+}
+
+.new-button a:visited{
+  color: #FFF;
+}
+
+.container{
+  position:relative;
+  text-align:center;
+  float:left;
+  display:block;
+  margin: 10px;
+  padding-bottom:30px;
+  border: 1px solid #000;
+  align:center;
+  background-color: #FFF;
+  width: 270px;
+  height: 300px;
+}
+
+.action-item{
+  position:relative;
+  float:left;
+  width: 30%;
+  background-color: #000;
+  margin: 2px;
+  border-radius:10px;
+}
+
+.action-item a{
+  color: #FFF;
+}
+
+.action-item a:visited{
+  color: #FFF;
+}
